@@ -23,6 +23,25 @@ public:
         vector<vector<int>>dp(n, vector<int>(n, -1));
         return matrix_chain_recur(p, 1, n-1, dp);
     }
+
+    int matrix_chain_dp(vector<int>&p) {
+        int n = p.size();
+        const int inf = 1e9;
+        vector<vector<int>>dp(n, vector<int>(n, 0));
+        for(int len = 2; len < n; len++) {
+            for(int i = 1; i<n-len+1; i++) {
+                int j = i + len - 1;
+                dp[i][j] = inf;
+                for(int k = i; k<j; k++) {
+                    dp[i][j] = min(
+                        dp[i][j],
+                        dp[i][k] + dp[k+1][j] + p[i-1] * p[k] * p[j]
+                    );
+                }
+            }
+        }
+        return dp[1][n-1];
+    }
 };
 
 
