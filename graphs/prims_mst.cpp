@@ -6,7 +6,6 @@ using namespace std;
 
 class MinSpanningTree {
 public:
-
     int n;
     vector<vector<pair<int, int>>> adj;
     vector<int> dist;
