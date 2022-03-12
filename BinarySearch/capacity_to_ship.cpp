@@ -2,35 +2,30 @@
 using namespace std;
 #define dbg(x) cerr<<#x<<" = "<<x<<endl
 
+
 class Solution {
-    using ll = long long;
-public:
-    bool good(int arr[], int n, int k, int t) {
-        int curr = t;
-        int itr = 0;
-        
-        if(t < *max_element(arr, arr + n))
-            return false;
+  public:
+    bool good(int arr[], int n, int days, int cap) {
         int cnt = 1;
+        int curr = cap;
+        int itr = 0;
         while(itr < n) {
             if(curr >= arr[itr]) {
                 curr -= arr[itr];
                 itr++;
             } else {
                 cnt++;
-                curr = t;
+                curr = cap;
             }
         }
-        return cnt <= k;
-    } 
-    
-    long long minTime(int arr[], int n, int k)
-    {
-        ll l = 1, r = 1e9;
-        ll res = 1;
+        return cnt <= days;
+    }
+    int leastWeightCapacity(int arr[], int n, int d) {
+        int l = *max_element(arr, arr + n), r = 1e9;
+        int res = l;
         while(r - l >= 0) {
-            ll mid = l + (r - l) / 2;
-            if(good(arr, n, k, mid)) {
+            int mid = l + (r - l) / 2;
+            if(good(arr, n, d, mid)) {
                 res = mid;
                 r = mid - 1;
             } else {
@@ -40,6 +35,8 @@ public:
         return res;
     }
 };
+
+
 
 signed main() {
     ios::sync_with_stdio(0);
