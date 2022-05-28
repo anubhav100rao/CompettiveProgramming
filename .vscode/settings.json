@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.html": "html",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "iosfwd": "cpp"
     }
 }

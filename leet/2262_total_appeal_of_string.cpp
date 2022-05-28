@@ -28,6 +28,6 @@ signed main() {
         freopen("output.txt","w",stdout);
         freopen("error.txt", "w", stderr);
     #endif
- 
+    
     return 0;
 }
