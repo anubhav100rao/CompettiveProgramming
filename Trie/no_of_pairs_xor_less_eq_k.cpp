@@ -80,16 +80,14 @@ int cntSmaller(TrieNode * root,
 			// present in Trie having
 			// ith bit (x)
 			if(root->child[x]) {
-					cntPairs +=
-					root->child[x]->cnt;
+					cntPairs += root->child[x]->cnt;
 			}
 		
-			root =
-				root->child[1 - x];
+			root = root->child[1 - x];
 		}
 		
 		// If the ith bit of K is 0
-		else{
+		else {
 			
 			// Update root
 			root = root->child[x];
