@@ -10,10 +10,45 @@ int partition(vector<int>&arr, int low, int high) {
         while(i <= j and arr[j] > pivot) j--;
         if(i <= j) swap(arr[i], arr[j]);
     }
-
+    /**
+     * left pivot element
+     * middle pivot element
+     * last pivot element
+     * randomised quick sort
+     */
     swap(arr[low], arr[j]);
     
     return j;
+}
+
+int partition_maintain(vector<int>&a, int low, int high) {
+        int n = a.size();
+        vector<int>result(high - low + 1, 0);
+        int pivot = a[0];
+        int idx = 0;
+        for(int i = 0; i<n; i++) {
+            if(a[i] < pivot) {
+                result[idx] = a[i];
+                idx++;
+            }
+        }
+
+        for(int i = 0; i<n; i++) {
+            if(a[i] == pivot) {
+                result[idx] = a[i];
+                idx++;
+            }
+        }
+
+        for(int i = 0; i<n; i++) {
+            if(a[i] > pivot) {
+                result[idx] = a[i];
+                idx++;
+            }
+        }
+
+        for(int i: result)
+            cout << i << " ";
 }
 
 

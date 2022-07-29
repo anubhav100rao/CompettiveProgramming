@@ -29,6 +29,7 @@ bool search(string &str) {
     return true;
 }
 
+
 vector<bool>solve(vector<string>&arr, vector<vector<string>>&queries) {
     for(string &str: arr) {
         string temp = "{" + str;
