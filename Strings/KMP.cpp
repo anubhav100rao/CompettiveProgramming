@@ -5,17 +5,18 @@ using namespace std;
 class KMP {
 public:
     vector<int>constructLps(string &str) {
+
         int n = str.size();
         vector<int>lps(n, 0);
-        int i = 0, j = 1;
+        int len = 0, j = 1;
         while(j < n) {
-            if(str[i] == str[j]) {
-                lps[j] = i + 1;
-                i++;
+            if(str[len] == str[j]) {
+                lps[j] = len + 1;
+                len++;
                 j++;
             } else {
-                if(i != 0) {
-                    i = lps[i - 1];
+                if(len != 0) {
+                    len = lps[len - 1];
                 } else {
                     lps[j] = 0;
                     j++;
@@ -26,6 +27,11 @@ public:
     }
 
     vector<int>findAllIndexes(string &text, string &pattern) {
+
+        // ABCAABCAABCACB
+        // AABCAABC
+        // lps = [0, 1, 0, 0, 1, 2, 3, 4]
+
         int n = text.size(), m = pattern.size();
         vector<int>lps = constructLps(pattern);
         vector<int>indexs;
