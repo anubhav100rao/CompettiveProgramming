@@ -20,7 +20,7 @@ int partition(vector<int>&arr, int low, int high) {
     
     return j;
 }
-
+// two ways implemented for quick sort
 int partition_maintain(vector<int>&a, int low, int high) {
         int n = a.size();
         vector<int>result(high - low + 1, 0);
@@ -73,3 +73,88 @@ signed main() {
  
     return 0;
 }
+
+
+/*
+
+int arr[] = new int[n];
+
+int arr[][] = new int[n][m];
+
+
+3 4
+1 2 3 4
+9 10 11 12 
+5 6 7 8
+
+0 1 2 3
+8 
+
+Scanner sc = new Scanner();
+int n = sc.nextInt();
+int m = sc.nextInt();
+
+int arr[][] = new int[n][m];
+
+for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++) 
+        arr[i][j] = sc.nextInt();
+
+int min = arr[0][0];
+
+for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++)
+        if (min > arr[i][j])
+            min = arr[i][j];
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) 
+        System.out.print(arr[i][j] - min + " " );
+    System.out.println("");
+}
+
+
+
+
+
+
+
+int mx = 0;
+
+for (int i = 0; i < n; i++) {
+    int sum = 0;
+    for (int j = 0; j < m; j++)
+        sum += arr[i][j];
+
+    if (sum > mx)
+        mx = sum;
+}
+
+System.out.println(mx);
+
+
+
+
+5 
+5 2 3 4 5
+
+0 1 2 3 4
+
+
+int n = sc.nextInt();
+
+int arr[] = new int[n];
+for (int i = 0; i < n; i++) 
+    arr[i] = sc.nextInt();
+
+int min = arr[0];
+
+for (int i = 0; i < n; i++)
+    if (arr[i] < min)
+        min = arr[i];
+
+for (int i = 0; i < n; i++)  
+    System.out.print(arr[i] - min + " ");
+
+
+*/
