@@ -37,7 +37,7 @@ public:
         int mid = start + (end - start) / 2;
         build(node * 2, start, mid);
         build(node * 2 + 1, mid + 1, end);
-        tree[node] = merge(tree[left], tree[right]);
+        tree[node] = merge(tree[left    ], tree[right]);
     }
 
     T query(int node, int start, int end, int l, int r) {

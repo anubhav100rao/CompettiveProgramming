@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define dbg(x) cerr<<#x<<" = "<<x<<endl
+
+signed main() {
+
+	int n; cin >> n;
+	vector<int>arr(n, 0);
+	for(int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	for(int i: arr) cout << i << " ";
+	
+    return 0;
+}

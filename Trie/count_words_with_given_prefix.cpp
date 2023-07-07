@@ -46,5 +46,6 @@ signed main() {
               "arp", "array" };
     string prefix = "ap";
     cout << getCount(words, prefix);
+
     return 0;
 }
